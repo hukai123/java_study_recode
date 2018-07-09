@@ -1,0 +1,264 @@
+接口
+在Java中，接口可理解为对象间相互通信的协议。接口在继承中扮演着很重要的角色。
+
+接口只定义派生要用到的方法，但是方法的具体实现完全取决于派生类。
+
+
+Java作为一种面向对象语言。支持以下基本概念：
+
+多态、继承、封装、抽象、类、对象、实例、方法、重载
+本节我们重点研究对象和类的概念。
+
+对象：对象是类的一个实例（对象不是找个女朋友），有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。
+类：类是一个模板，它描述一类对象的行为和状态。
+
+
+
+Java 教程
+Java 教程
+Java 简介
+Java 开发环境配置
+Java 基础语法
+Java 对象和类
+Java 基本数据类型
+Java 变量类型
+Java 修饰符
+Java 运算符
+Java 循环结构
+Java 分支结构
+Java Number & Math 类
+Java Character 类
+Java String 类
+Java StringBuffer
+Java 数组
+Java 日期时间
+Java 正则表达式
+Java 方法
+Java Stream、File、IO
+Java Scanner 类
+Java 异常处理
+
+Java 面向对象
+Java 继承
+Java Override/Overload
+Java 多态
+Java 抽象类
+Java 封装
+Java 接口
+Java 包(package)
+
+Java 高级教程
+Java 数据结构
+Java 集合框架
+Java 泛型
+Java 序列化
+Java 网络编程
+Java 发送邮件
+Java 多线程编程
+Java Applet 基础
+Java 文档注释
+Java 实例
+Java 8 新特性
+Java MySQL 连接
+Java 9 新特性
+ Java 基础语法 Java 基本数据类型 
+Java 对象和类
+Java作为一种面向对象语言。支持以下基本概念：
+
+多态
+继承
+封装
+抽象
+类
+对象
+实例
+方法
+重载
+本节我们重点研究对象和类的概念。
+
+对象：对象是类的一个实例（对象不是找个女朋友），有状态和行为。例如，一条狗是一个对象，它的状态有：颜色、名字、品种；行为有：摇尾巴、叫、吃等。
+类：类是一个模板，它描述一类对象的行为和状态。
+下图中男孩女孩为类，而具体的每个人为该类的对象：
+
+
+
+Java中的对象
+现在让我们深入了解什么是对象。看看周围真实的世界，会发现身边有很多对象，车，狗，人等等。所有这些对象都有自己的状态和行为。
+
+拿一条狗来举例，它的状态有：名字、品种、颜色，行为有：叫、摇尾巴和跑。
+
+对比现实对象和软件对象，它们之间十分相似。
+
+软件对象也有状态和行为。软件对象的状态就是属性，行为通过方法体现。
+
+在软件开发中，方法操作对象内部状态的改变，对象的相互调用也是通过方法来完成。
+
+Java中的类
+类可以看成是创建Java对象的模板。
+
+通过下面一个简单的类来理解下Java中类的定义：
+
+public class Dog{
+  String breed;
+  int age;
+  String color;
+  void barking(){
+  }
+ 
+  void hungry(){
+  }
+ 
+  void sleeping(){
+  }
+}
+一个类可以包含以下类型变量：
+
+局部变量：在方法、构造方法或者语句块中定义的变量被称为局部变量。变量声明和初始化都是在方法中，方法结束后，变量就会自动销毁。
+成员变量：成员变量是定义在类中，方法体之外的变量。这种变量在创建对象的时候实例化。成员变量可以被类中方法、构造方法和特定类的语句块访问。
+类变量：类变量也声明在类中，方法体之外，但必须声明为static类型。
+一个类可以拥有多个方法，在上面的例子中：barking()、hungry()和sleeping()都是Dog类的方法。
+
+构造方法
+每个类都有构造方法。如果没有显式地为类定义构造方法，Java编译器将会为该类提供一个默认构造方法。
+
+在创建一个对象的时候，至少要调用一个构造方法。构造方法的名称必须与类同名，一个类可以有多个构造方法。
+
+下面是一个构造方法示例：
+
+public class Puppy{
+    public Puppy(){
+    }
+ 
+    public Puppy(String name){
+        // 这个构造器仅有一个参数：name
+    }
+}
+创建对象
+对象是根据类创建的。在Java中，使用关键字new来创建一个新的对象。创建对象需要以下三步：
+
+声明：声明一个对象，包括对象名称和对象类型。
+实例化：使用关键字new来创建一个对象。
+初始化：使用new创建对象时，会调用构造方法初始化对象。
+下面是一个创建对象的例子：
+
+public class Puppy{
+   public Puppy(String name){
+      //这个构造器仅有一个参数：name
+      System.out.println("小狗的名字是 : " + name ); 
+   }
+   public static void main(String []args){
+      // 下面的语句将创建一个Puppy对象
+      Puppy myPuppy = new Puppy( "tommy" );
+   }
+}
+编译并运行上面的程序，会打印出下面的结果：
+
+小狗的名字是 : tommy
+访问实例变量和方法
+通过已创建的对象来访问成员变量和成员方法，如下所示：
+
+/* 实例化对象 */
+ObjectReference = new Constructor();
+/* 访问类中的变量 */
+ObjectReference.variableName;
+/* 访问类中的方法 */
+ObjectReference.MethodName();
+实例
+下面的例子展示如何访问实例变量和调用成员方法：
+
+public class Puppy{
+   int puppyAge;
+   public Puppy(String name){
+      // 这个构造器仅有一个参数：name
+      System.out.println("小狗的名字是 : " + name ); 
+   }
+ 
+   public void setAge( int age ){
+       puppyAge = age;
+   }
+ 
+   public int getAge( ){
+       System.out.println("小狗的年龄为 : " + puppyAge ); 
+       return puppyAge;
+   }
+ 
+   public static void main(String []args){
+      /* 创建对象 */
+      Puppy myPuppy = new Puppy( "tommy" );
+      /* 通过方法来设定age */
+      myPuppy.setAge( 2 );
+      /* 调用另一个方法获取age */
+      myPuppy.getAge( );
+      /*你也可以像下面这样访问成员变量 */
+      System.out.println("变量值 : " + myPuppy.puppyAge ); 
+   }
+}
+编译并运行上面的程序，产生如下结果：
+
+小狗的名字是 : tommy
+小狗的年龄为 : 2
+变量值 : 2
+
+
+
+
+
+源文件声明规则
+
+一个源文件中只能有一个public类
+一个源文件可以有多个非public类
+源文件的名称应该和public类的类名保持一致。例如：源文件中public类的类名是Employee，那么源文件应该命名为Employee.java。
+
+如果一个类定义在某个包中，那么package语句应该在源文件的首行。
+
+
+
+下面的命令行将会命令编译器载入java_installation/java/io路径下的所有类
+
+import java.io.*;
+
+
+
+
+Java 基本数据类型
+Java 的两大数据类型: 内置数据类型 、引用数据类型
+
+内置数据类型
+Java语言提供了八种基本类型。六种数字类型（四个整数型，两个浮点型），一种字符类型，还有一种布尔型。
+
+
+引用类型
+引用类型指向一个对象，指向对象的变量是引用变量。这些变量在声明时被指定为一个特定的类型，比如 Employee、Puppy 等。变量一旦声明后，类型就不能被改变了。
+对象、数组都是引用数据类型。
+所有引用类型的默认值都是null。
+一个引用变量可以用来引用任何与之兼容的类型。
+例子：Site site = new Site("Runoob")。
+
+
+
+Java 常量
+常量在程序运行时是不能被修改的。
+
+在 Java 中使用 final 关键字来修饰常量，声明方式和变量类似：
+虽然常量名也可以用小写，但为了便于识别，通常使用大写字母表示常量。
+
+final double PI = 3.1415927;
+
+
+强制类型转换
+
+1. 条件是转换的数据类型必须是兼容的。
+
+2. 格式：(type)value type是要强制类型转换后的数据类型 实例：
+ int i1 = 123;
+ byte b = (byte)i1;//强制类型转换为byte
+
+
+
+
+
+
+
+
+
+
