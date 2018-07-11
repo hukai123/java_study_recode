@@ -1,31 +1,61 @@
-import java.io.*;
+// import java.io.*;
  
+// public class Employee{
+//    String name;
+//    int age;
+//    String designation;
+//    double salary;
+//    // Employee ÀàµÄ¹¹ÔìÆ÷
+//    public Employee(String name){
+//       this.name = name;
+//    }
+//    // ÉèÖÃageµÄÖµ
+//    public void empAge(int empAge){
+//       age =  empAge;
+//    }
+//    /* ÉèÖÃdesignationµÄÖµ*/
+//    public void empDesignation(String empDesig){
+//       designation = empDesig;
+//    }
+//    /* ÉèÖÃsalaryµÄÖµ*/
+//    public void empSalary(double empSalary){
+//       salary = empSalary;
+//    }
+//    /* ´òÓ¡ĞÅÏ¢ */
+//    public void printEmployee(){
+//       System.out.println("Ãû×Ö:"+ name );
+//       System.out.println("ÄêÁä:" + age );
+//       System.out.println("Ö°Î»:" + designation );
+//       System.out.println("Ğ½Ë®:" + salary);
+//    }
+// }
+
 public class Employee{
-   String name;
-   int age;
-   String designation;
-   double salary;
-   // Employee ç±»çš„æ„é€ å™¨
-   public Employee(String name){
-      this.name = name;
+   //aaÊÇ¾²Ì¬µÄË½ÓĞ±äÁ¿,Ò²½ĞÀà±äÁ¿
+   private static double aa;
+   // DEPARTMENTÊÇÒ»¸ö³£Á¿
+   public static final String DEPARTMENT = "¿ª·¢ÈËÔ±";
+   // Õâ¸öÊµÀı±äÁ¿¶Ô×ÓÀà¿É¼û
+   public String name;
+   // Ë½ÓĞ±äÁ¿£¬½öÔÚ¸ÃÀà¿É¼û
+   private double salary;
+   //ÔÚ¹¹ÔìÆ÷ÖĞ¶Ôname¸³Öµ
+   public Employee (String empName){
+      name = empName;
    }
-   // è®¾ç½®ageçš„å€¼
-   public void empAge(int empAge){
-      age =  empAge;
+   //Éè¶¨salaryµÄÖµ
+   public void setSalary(double empSal){
+      salary = empSal;
+   }  
+   // ´òÓ¡ĞÅÏ¢
+   public void printEmp(){
+      System.out.println("Ãû×Ö : " + name );
+      System.out.println("Ğ½Ë® : " + salary);
    }
-   /* è®¾ç½®designationçš„å€¼*/
-   public void empDesignation(String empDesig){
-      designation = empDesig;
-   }
-   /* è®¾ç½®salaryçš„å€¼*/
-   public void empSalary(double empSalary){
-      salary = empSalary;
-   }
-   /* æ‰“å°ä¿¡æ¯ */
-   public void printEmployee(){
-      System.out.println("åå­—:"+ name );
-      System.out.println("å¹´é¾„:" + age );
-      System.out.println("èŒä½:" + designation );
-      System.out.println("è–ªæ°´:" + salary);
+ 
+   public static void main(String[] args){
+      Employee empOne = new Employee("RUNOOB");
+      empOne.setSalary(1000);
+      empOne.printEmp();
    }
 }
